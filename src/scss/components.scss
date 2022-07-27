@@ -1,0 +1,80 @@
+// ========= SIDEBAR ========= 
+.sidebar {
+    @include size($sidebar-w, 100vh);
+    @include flex-col(flex-start,flex-start);
+    background-color: $c-white;
+    color: $c-black;
+
+    &__cta {
+        padding: 0 $p-s;
+        @include size(100%,max-content);
+        min-height: 3rem;
+        @include flex-row(center,center);
+    }
+    &__menu {
+        @include size(100%,max-content);
+        @include flex-col(flex-start,flex-start);
+        gap: 0.5rem;
+        li {
+            @include size(100%,100%);
+        }
+    }
+}
+// =========================== 
+
+// ========= MENU =========
+.menu {
+    padding: $p-s 0;
+    position: absolute;
+    left: .3rem;
+    top: calc(100% + .3rem);
+    z-index: 2;
+    @include size(100%,max-content);
+    min-width: 18.75rem;
+    background-color: $c-gray-light;
+    border: $border;
+    border-radius: $btn-radius;
+}
+// ========================
+
+// ========= BUTTON =========
+.btn {
+    margin: 0 auto;
+    @include size(100%,max-content);
+    max-width: 12.5rem;
+    min-height: 2.5rem;
+    @include flex-row(center, flex-start);
+    gap: .5rem;
+    border-radius: $btn-radius;
+    font-size: $fs-m;
+    font-family: $ff-primary;
+    transition: $btn-transition;
+    
+    &__primary {
+        padding: 0 $p-l;
+        background-color: $c-black;
+        color: $c-white;
+        &:hover {
+            background-color: $c-extrablack;
+        }
+    }
+    &__link {
+        padding: 0 $p-l;
+        background-color: $c-gray-light;
+        color: $c-black;
+        &:hover {
+            background-color: $c-gray;
+        }
+    }
+    &__info {
+        max-width: 2.5rem;
+        @include center;
+        color: $c-gray-dark;
+        font-size: $fs-l;
+        border-radius: 50%;
+        &:hover {
+            background-color: $c-gray-light;
+        }
+    }
+}
+// ==========================

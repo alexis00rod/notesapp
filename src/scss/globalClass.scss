@@ -1,0 +1,123 @@
+// ========= APP =========
+.app {
+    display: flex;
+
+}
+// =======================
+
+// ========= WIDTH & HEIGHT =========
+.w-lim {width: 100%;}
+// ==================================
+
+// ========= PADDING & MARGIN =========
+// Padding top
+.p__top--s {padding-top: $p-s;}
+.p__top--m {padding-top: $p-m;}
+.p__top--l {padding-top: $p-l;}
+// Padding left
+.p__left--s {padding-left: $p-s;}
+.p__left--m {padding-left: $p-m;}
+.p__left--l {padding-left: $p-l;}
+// Padding bottom
+.p__bottom--s {padding-bottom: $p-s;}
+.p__bottom--m {padding-bottom: $p-m;}
+.p__bottom--l {padding-bottom: $p-l;}
+// Padding right
+.p__right--s {padding-right: $p-s;}
+.p__right--m {padding-right: $p-m;}
+.p__right--l {padding-right: $p-l;}
+// Margin top
+.m__top--s {margin-top: $m-s;}
+.m__top--m {margin-top: $m-m;}
+.m__top--l {margin-top: $m-l;}
+// Margin left
+.m__left--s {margin-left: $m-s;}
+.m__left--m {margin-left: $m-m;}
+.m__left--l {margin-left: $m-l;}
+// Margin bottom
+.m__bottom--s {margin-bottom: $m-s;}
+.m__bottom--m {margin-bottom: $m-m;}
+.m__bottom--l {margin-bottom: $m-l;}
+// Margin right
+.m__right--s {margin-right: $m-s;}
+.m__right--m {margin-right: $m-m;}
+.m__right--m {margin-right: $m-l;}
+// ====================================
+
+// ========= TITLE =========
+.title {
+    @include size(100%,max-content);
+    min-height: 2rem;
+    @include flex-row(center,flex-start);
+    text-transform: capitalize;
+    &--s {
+        font-size: $fs-m;
+    }
+    &--m {
+        font-size: $fs-l;
+    }
+    &--l {
+        font-size: $fs-xl;
+    }
+}
+// =========================
+
+// ========= ITEM =========
+// Border
+.border--top {border-top: $border;}
+.border--left {border-left: $border;}
+.border--bottom {border-bottom: $border;}
+.border--right {border-right: $border;}
+// ========================
+
+// ========= INPUT =========
+.input {
+    padding: 0 $p-l;
+    @include size(100%,max-content);
+    max-width: 12.5rem;
+    min-height: 2.5rem;
+    @include flex-row(center, flex-start);
+    gap: .5rem;
+    border-radius: $btn-radius;
+    background-color: $c-gray;
+    color: $c-white;
+    input {
+        font-size: $fs-m;
+        font-family: $ff-primary;
+        color: $c-white;
+        &::placeholder {
+            color: $c-white;
+        }
+    }
+}
+// =========================
+
+// ========= AVATAR =========
+.avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+// ==========================
+
+// ========= FONT =========
+// Font size
+.fs--s{font-size: $fs-s;}
+.fs--m{font-size: $fs-m;}
+.fs--l{font-size: $fs-l;}
+// Font color
+.fc--primary {}
+.fc--secondary {color: $c-gray-dark;}
+// ========================
+
+// ========= POSITION =========
+.pos__rel {
+    position: relative;
+}
+// ============================
+
+// Debug
+.debug {
+    border: .1rem solid crimson;
+}
