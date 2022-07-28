@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { useState } from "react";
 import { Sidebar } from "./components/Sidebar/Sidebar";
+import { UserProvider } from './context/UserContext';
 
 export const App = () => {
     // const [note, setNote] = useState({})
@@ -21,8 +22,10 @@ export const App = () => {
     return (
         <>
         <div className='app'>
-            <Sidebar />
-            <Outlet />
+            <UserProvider>
+                <Sidebar />
+                <Outlet />
+            </UserProvider>
         </div>
             {/* <form onSubmit={addNote}>
                 <input type="text" name="noteHeader" placeholder="title" onChange={handleNote}/>
