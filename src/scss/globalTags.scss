@@ -15,8 +15,8 @@ body {
     color: $c-black;
     font-family: $ff-primary;
     main {
-        @include size($main-w,max-content);
-        min-height: 100vh;
+        @include size($main-w,100vh);
         background-color: $c-white;
+        @include flex-col(flex-start,flex-start);
     }
 }

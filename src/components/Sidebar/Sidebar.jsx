@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import defaultImgProfile from "../../assets/images/default-no-user-pic.jpg";
+import { useUserContext } from "../../context/UserContext";
 
 export const Sidebar = () => {
+    const { notes,setNotes } = useUserContext()
     const [menu, setMenu] = useState(false);
+
+    const addNote = () => {
+        setNotes([
+            ...notes,
+            {
+                title: "Title",
+                description: "Description"
+            }
+        ])
+    }
 
     return (
         <nav className="sidebar">
@@ -45,13 +57,22 @@ export const Sidebar = () => {
             <ul className="w-full flex-col gap-s">
                 {/* Add note */}
                 <li>
-                    <button className="mb-s btn btn-primary mx-auto px-m justify-start gap-s bg-black-hover fc-white">
+                    <button 
+                    className="mb-s btn btn-primary mx-auto px-m justify-start gap-s bg-black-hover fc-white"
+                    onClick={addNote}
+                    >
                         <i className="fa-solid fa-plus"></i>New note
                     </button>
                 </li>
-                {/* My notes */}
+                {/* Home */}
                 <li>
                     <Link to="/" className="btn btn-primary mx-auto px-m justify-start gap-s bg-gray-hover fc-black">
+                        <i className="fa-solid fa-house"></i>Home
+                    </Link>
+                </li>
+                {/* My notes */}
+                <li>
+                    <Link to="notes" className="btn btn-primary mx-auto px-m justify-start gap-s bg-gray-hover fc-black">
                         <i className="fa-solid fa-file-pen"></i>My notes
                     </Link>
                 </li>

@@ -18,3 +18,27 @@
     align-items: $a;
     justify-content: $j;
 }
+@mixin grid($col) {
+    display: grid;
+    grid-template-columns: repeat($col,1fr);
+}
+@mixin scrollbar {
+    overflow: overlay;
+    &::-webkit-scrollbar {
+        width: .6rem;
+        display: none;
+        transition: .5s;
+        &-thumb {
+            background-color: $c-gray-dark;
+            border-radius: $btn-radius;
+        }
+        &-track-piece {
+            margin: .2rem 0;
+        }
+    }
+    &:hover {
+        &::-webkit-scrollbar {
+            display: block;
+        }
+    }
+}

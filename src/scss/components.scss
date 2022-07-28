@@ -19,6 +19,17 @@
     background-color: $c-gray-extralight;
     border: $border;
     border-radius: $btn-radius;
+    box-shadow: $shadow;
+}
+// ========================
+
+// ========= LIST =========
+.list {
+    padding: $p-s $p-m;
+    @include size(100%,100%);
+    @include grid(2);
+    gap: .5rem;
+    @include scrollbar;
 }
 // ========================
 
@@ -27,8 +38,12 @@
     padding: $p-m;
     @include size(100%,$card-h);
     background-color: $c-gray-extralight;
-    border: $border;
+    // border: $border;
     border-radius: $border-radius;
+    transition: $btn-transition;
+    &:hover {
+        box-shadow: $shadow;
+    }
 }
 // ========================
 
