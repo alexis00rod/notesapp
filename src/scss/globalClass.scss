@@ -1,74 +1,68 @@
 // ========= APP =========
 .app {
     display: flex;
-
+    gap: .2rem;
 }
 // =======================
 
 // ========= WIDTH & HEIGHT =========
-.w-lim {width: 100%;}
+.w-full {width: 100%;}
 // ==================================
 
-// ========= PADDING & MARGIN =========
+// ========= PADDING =========
+// Padding x
+.px-s {padding-left: $p-s;padding-right: $p-s;}
+.px-m {padding-left: $p-m;padding-right: $p-m;}
+.px-l {padding-left: $p-l;padding-right: $p-l;}
+// Padding y
+.py-s {padding-top: $p-s;padding-bottom: $p-s;}
+.py-m {padding-top: $p-m;padding-bottom: $p-m;}
+.py-l {padding-top: $p-l;padding-bottom: $p-l;}
 // Padding top
-.p__top--s {padding-top: $p-s;}
-.p__top--m {padding-top: $p-m;}
-.p__top--l {padding-top: $p-l;}
+.pt-s {padding-top: $p-s;}
+.pt-m {padding-top: $p-m;}
+.pt-l {padding-top: $p-l;}
 // Padding left
-.p__left--s {padding-left: $p-s;}
-.p__left--m {padding-left: $p-m;}
-.p__left--l {padding-left: $p-l;}
+.pl-s {padding-left: $p-s;}
+.pl-m {padding-left: $p-m;}
+.pl-l {padding-left: $p-l;}
 // Padding bottom
-.p__bottom--s {padding-bottom: $p-s;}
-.p__bottom--m {padding-bottom: $p-m;}
-.p__bottom--l {padding-bottom: $p-l;}
+.pb-s {padding-bottom: $p-s;}
+.pb-m {padding-bottom: $p-m;}
+.pb-l {padding-bottom: $p-l;}
 // Padding right
-.p__right--s {padding-right: $p-s;}
-.p__right--m {padding-right: $p-m;}
-.p__right--l {padding-right: $p-l;}
-// Margin top
-.m__top--s {margin-top: $m-s;}
-.m__top--m {margin-top: $m-m;}
-.m__top--l {margin-top: $m-l;}
-// Margin left
-.m__left--s {margin-left: $m-s;}
-.m__left--m {margin-left: $m-m;}
-.m__left--l {margin-left: $m-l;}
-// Margin bottom
-.m__bottom--s {margin-bottom: $m-s;}
-.m__bottom--m {margin-bottom: $m-m;}
-.m__bottom--l {margin-bottom: $m-l;}
-// Margin right
-.m__right--s {margin-right: $m-s;}
-.m__right--m {margin-right: $m-m;}
-.m__right--m {margin-right: $m-l;}
+.pr-s {padding-right: $p-s;}
+.pr-m {padding-right: $p-m;}
+.pr-l {padding-right: $p-l;}
 // ====================================
 
-// ========= TITLE =========
-.title {
-    @include size(100%,max-content);
-    min-height: 2rem;
-    @include flex-row(center,flex-start);
-    text-transform: capitalize;
-    &--s {
-        font-size: $fs-m;
-    }
-    &--m {
-        font-size: $fs-l;
-    }
-    &--l {
-        font-size: $fs-xl;
-    }
-}
-// =========================
+// ========= MARGIN =========
+// Margin x
+.mx-auto {margin-left: auto;margin-right: auto;}
+// Margin top
+.mt-s {margin-top: $m-s;}
+.mt-m {margin-top: $m-m;}
+.mt-l {margin-top: $m-l;}
+// Margin left
+.ml-s {margin-left: $m-s;}
+.ml-m {margin-left: $m-m;}
+.ml-l {margin-left: $m-l;}
+// Margin bottom
+.mb-s {margin-bottom: $m-s;}
+.mb-m {margin-bottom: $m-m;}
+.mb-l {margin-bottom: $m-l;}
+// Margin right
+.mr-s {margin-right: $m-s;}
+.mr-m {margin-right: $m-m;}
+.mr-m {margin-right: $m-l;}
+// ==========================
 
-// ========= ITEM =========
-// Border
-.border--top {border-top: $border;}
-.border--left {border-left: $border;}
-.border--bottom {border-bottom: $border;}
-.border--right {border-right: $border;}
-// ========================
+// ========= BORDERS =========
+.divide-top {border-top: $divide;}
+.divide-left {border-left: $divide;}
+.divide-right {border-right: $divide;}
+.divide-bottom {border-bottom: $divide;}
+// ===========================
 
 // ========= INPUT =========
 .input {
@@ -79,7 +73,7 @@
     @include flex-row(center, flex-start);
     gap: .5rem;
     border-radius: $btn-radius;
-    background-color: $c-gray;
+    background-color: $c-gray-dark;
     color: $c-white;
     input {
         font-size: $fs-m;
@@ -101,21 +95,34 @@
 }
 // ==========================
 
-// ========= FONT =========
+// ========= TEXT =========
 // Font size
-.fs--s{font-size: $fs-s;}
-.fs--m{font-size: $fs-m;}
-.fs--l{font-size: $fs-l;}
+.fs-xs{font-size: $fontsize *0.75;}
+.fs-s{font-size: $fontsize *0.9;}
+.fs-m{font-size: $fontsize ;}
+.fs-l{font-size: $fontsize *1.2;}
+.fs-xl{font-size: $fontsize *1.5;}
 // Font color
-.fc--primary {}
-.fc--secondary {color: $c-gray-dark;}
+.fc-white {color: $c-white;}
+.fc-gray {color: $c-gray-extradark;}
+.fc-black {color: $c-black;}
+// Text transform
+.uppercase {text-transform: uppercase;}
 // ========================
 
 // ========= POSITION =========
-.pos__rel {
-    position: relative;
-}
+.relative {position: relative;}
 // ============================
+
+// ========= BACKGROUND =========
+// Static
+.bg-white {background-color: $c-white;}
+.bg-white-hover {background-color: $c-white; &:hover{background-color: $c-gray-light;}}
+.bg-black {background-color: $c-black;}
+.bg-black-hover {background-color: $c-black; &:hover{background-color: $c-extrablack;}}
+.bg-gray {background-color: $c-gray-light;}
+.bg-gray-hover {background-color: $c-gray-light; &:hover{background-color: $c-gray;}}
+// ==============================
 
 // Debug
 .debug {

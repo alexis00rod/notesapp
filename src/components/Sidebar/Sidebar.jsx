@@ -1,51 +1,67 @@
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import defaultImgProfile from '../../assets/images/default-no-user-pic.jpg'
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import defaultImgProfile from "../../assets/images/default-no-user-pic.jpg";
 
 export const Sidebar = () => {
-    const [menu, setMenu] = useState(false)
+    const [menu, setMenu] = useState(false);
 
     return (
-        <nav className='sidebar'>
-            <div className='sidebar__cta m__bottom--s pos__rel'>
-                <div className='flex flex__ali--center gap-s flex--g' onClick={() => setMenu(!menu)}>
-                    <img src={defaultImgProfile} alt="default photo" className='avatar' />
+        <nav className="sidebar">
+            <div className="w-full mb-s px-s py-s relative flex-row align-center justify-between">
+                <div className="flex-row align-center gap-s" onClick={() => setMenu(!menu)}>
+                    <img src={defaultImgProfile} alt="default" className="avatar" />
                     <h4>Alexis Ruiz Diaz</h4>
                     <i className="fa-solid fa-chevron-down"></i>
                 </div>
-                <Link to='settings' className='btn btn__info'><i className="fa-solid fa-gear"></i></Link>
-                {
-                    menu &&
-                    <div className='menu'>
-                        <h5 className='title title--m p__left--m p__bottom--s'>Account</h5>
-                        <div className='flex flex__ali--center gap-s p__left--m p__bottom--m border--bottom'>
+                <Link to="settings" className="btn btn-secondary fc-gray bg-white-hover">
+                    <i className="fa-solid fa-gear"></i>
+                </Link>
+                {menu && (
+                    <div className="menu">
+                        <h5 className="mb-s px-m pt-s uppercase">Account</h5>
+                        <div className="px-m pb-s flex-row align-center justify-start gap-s divide-bottom">
                             <i className="fa-solid fa-check"></i>
-                            <img src={defaultImgProfile} alt="default photo" className='avatar' />
-                            <h4 className='flex flex--col fc--secondary'>Alexis Ruiz Diaz <span className='fs--s'>alexis00rodrigo@gmail.com</span></h4>
+                            <img src={defaultImgProfile} alt="default" className="avatar"/>
+                            <h4 className="flex-col fs-s">
+                                Alexis Ruiz Diaz
+                                <span className="fc-gray">arrd00.db@gmail.com</span>
+                            </h4>
                         </div>
                         <ul>
-                            <li className='border--bottom p__top--s p__bottom--s p__left--m'>Log out</li>
+                            <li className="px-m py-s divide-bottom">
+                                Log out
+                            </li>
                         </ul>
                     </div>
-                }
+                )}
             </div>
-            <form className='sidebar__cta'>
-                <div className="input">
+            {/* Search note */}
+            <form className="w-full flex-col mb-m">
+                <div className="mx-auto input">
                     <i className="fa-solid fa-magnifying-glass"></i>
-                    <input type="search" placeholder='Search note'/>
+                    <input type="search" placeholder="Search note" />
                 </div>
             </form>
-            <div className='sidebar__cta m__bottom--l'>
-                <button className='btn btn__primary'><i className="fa-solid fa-plus"></i>New note</button>
-            </div>
-            <ul className='sidebar__menu'>
+            <ul className="w-full flex-col gap-s">
+                {/* Add note */}
                 <li>
-                    <Link to='/' className='btn btn__link'><i className="fa-solid fa-file-pen"></i>My notes</Link>
+                    <button className="mb-s btn btn-primary mx-auto px-m justify-start gap-s bg-black-hover fc-white">
+                        <i className="fa-solid fa-plus"></i>New note
+                    </button>
                 </li>
+                {/* My notes */}
                 <li>
-                    <Link to='trash' className='btn btn__link'><i className="fa-solid fa-trash"></i>Trash</Link>
+                    <Link to="/" className="btn btn-primary mx-auto px-m justify-start gap-s bg-gray-hover fc-black">
+                        <i className="fa-solid fa-file-pen"></i>My notes
+                    </Link>
+                </li>
+                {/* Trash */}
+                <li>
+                    <Link to="trash" className="btn btn-primary mx-auto px-m justify-start gap-s bg-gray-hover fc-black">
+                        <i className="fa-solid fa-trash"></i>Trash
+                    </Link>
                 </li>
             </ul>
         </nav>
-    )
-}
+    );
+};

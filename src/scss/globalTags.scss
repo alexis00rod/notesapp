@@ -14,4 +14,9 @@ body {
     background-color: $c-gray-light;
     color: $c-black;
     font-family: $ff-primary;
+    main {
+        @include size($main-w,max-content);
+        min-height: 100vh;
+        background-color: $c-white;
+    }
 }

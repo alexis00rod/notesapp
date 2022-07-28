@@ -7,6 +7,7 @@ $fs-s: .8rem;
 $fs-m: 1rem;
 $fs-l: 1.2rem;
 $fs-xl: 1.5rem;
+$fontsize: 1rem;
 // Font weight
 $fw-light: 300;
 $fw-normal: 400;
@@ -16,9 +17,11 @@ $fw-bold: 700;
 // ========= COLORS =========
 // Color basic
 $c-white: #ffffff;
-$c-gray-light: #f6f6f6;
+$c-gray-extralight: #f6f6f6;
+$c-gray-light: #dddddd;
 $c-gray: #c2c2c2;
-$c-gray-dark: #747474;
+$c-gray-dark: #9e9e9e;
+$c-gray-extradark: #686868;
 $c-black: #2b2b2b;
 $c-extrablack: #131313;
 // Color components
@@ -37,10 +40,15 @@ $m-l: 1.5rem;
 
 // ========= SIZES =========
 $sidebar-w: 15.625rem;
+$main-w: 25rem;
+$card-h: 15.625rem;
+$btn-h: 2.5rem;
 // =========================
 
 // ========= BOX =========
+$divide: .05rem solid $c-gray-light;
 $border: .05rem solid $c-gray-dark;
+$border-radius: .5rem;
 // =======================
 
 // ========= BUTTONS =========
