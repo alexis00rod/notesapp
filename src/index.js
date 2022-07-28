@@ -7,6 +7,7 @@ import { Account } from './routes/Account/Account';
 import { Settings } from './routes/Settings/Settings';
 import { Trash } from './routes/Trash/Trash';
 import './index.scss'
+import { Home } from './routes/Home/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +15,8 @@ root.render(
         <BrowserRouter>
         <Routes>
             <Route path='/' element={<App />}>
-                <Route index element={<MyNotes />} />
+                <Route index element={<Home />} />
+                <Route path='notes' element={<MyNotes />} />
                 <Route path='account' element={<Account />}/>
                 <Route path='settings' element={<Settings />} />
                 <Route path='trash' element={<Trash />} />
